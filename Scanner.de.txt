@@ -1,0 +1,283 @@
+Scanner 2.8
+-----------
+
+Inhalt:
+
+1. Zweck und Bedienung
+2. Einstellen der Clustergrˆﬂe
+3. Startordner
+4. Optimierung durch paralleles Scannen
+5. Systemvoraussetzungen
+6. Installation/Deinstallation
+7. Nutzungsbedingungen
+8. Bekannte Fehler und Schw‰chen
+9. FAQ
+10. Versionsgeschichte
+
+
+1. Zweck und Bedienung
+
+Der Scanner zeigt die Belegung von Speichermedien in einer grafischen 
+‹bersicht an. Um dem Benutzer die Relationen optimal zu vermitteln, 
+werden alle Ordner und Dateien in allen Verzeichnisebenen gleichzeitig 
+angezeigt; mit einer Fl‰che, die proportional ist zum jeweils belegten 
+Speicherplatz. Dabei sind kleinere Objekte nat¸rlich unsichtbar. Der 
+Scanner ist also kein Dateimanager; er gibt nur die ‹bersicht zur¸ck, 
+die mit den Windows-Bordmitteln ab und zu verloren geht.
+
+F¸r die Darstellung wird ein erweitertes Kreisdiagramm mit 
+konzentrischen Ringen verwendet, wobei die Segmente nach auﬂen hin immer 
+tiefer im Verzeichnisbaum liegende Objekte repr‰sentieren. Bewegen Sie 
+den Cursor ¸ber ein Objekt, um seinen Pfad, den belegten Speicherplatz 
+sowie evtl. die Anzahl der enthaltenen Dateien zu erfahren. Klicken Sie
+mit der rechten Maustaste auf ein Segment, um sein Kontextmen¸ zu 
+ˆffnen. Dort werden - abh‰ngig vom Typ des Objekts - verschiedene 
+Operationen angeboten:
+  - Verstecken/Einblenden des Ordnerinhalts
+  - In einen Ordner wechseln (auch direkt mit linker Maustaste)
+  - Ordner neu scannen
+  - Datei/Ordner mit der zugehˆrigen Anwendung ˆffnen
+  - Datei/Ordner in den Papierkorb schieben
+  - Datei/Ordner lˆschen
+
+Nach dem anf‰nglichen Scannen erhalten Sie eine Festplatten-‹bersicht.
+Mit den Buttons am linken Rand kˆnnen Sie wahlweise jedes andere Ihrer 
+Laufwerke anzeigen. Dr¸cken des bereits gew‰hlten Laufwerkes bewirkt ein
+erneutes Scannen. Sie kˆnnen selbst festlegen, welche ihrer Festplatten
+in die ‹bersicht aufgenommen werden sollen. Benutzen Sie dazu den
+Schalter "‹bersicht" aus dem Kontextmen¸ der Laufwerke (Klick mit der
+rechten Maustaste auf den zugehˆrigen Knopf).
+
+Mit dem "Zur¸ck"-Button wechseln Sie in den zuvor eingestellten Ordner,
+mit "‹bergeordneter Ordner" in ebendiesen. Der Button "Ordner neu
+scannen" veranlaﬂt ein erneutes Scannen nur des gerade eingestellten
+Ordners.
+
+Weiterhin bietet das Programm schnellen Zugriff auf zwei Werkzeuge zur
+Freigabe von Speicherplatz: die Software-Deinstallation und das Leeren
+des Papierkorbes. Achtung: Letztere Funktion wird automatisch in der
+Anzeige nachvollzogen. Wenn Sie dagegen Software deinstallieren, sollten
+Sie anschlieﬂend eine Erneuerung der Anzeige veranlassen.
+
+Die Grˆﬂe des Programmfensters l‰sst sich ¸ber die Buttons "+" und "-"
+anpassen. Dabei ist allerdings zu ber¸cksichtigen, dass das Programm
+bei einem groﬂen Fenster sehr viel Speicherplatz benˆtigt und
+mˆglicherweise nicht auf jedem System einwandfrei l‰uft.
+
+Bitte benachrichtigen Sie mich, falls Sie einen Bug entdeckt haben. 
+F¸gen Sie eine exakte Beschreibung Ihrer Laufwerke bei sowie das Logfile
+'Scanner.log', das Sie aus dem Scanner heraus mit der Taste 'L' erzeugen 
+kˆnnen.
+
+
+2. Einstellen der Clustergrˆﬂe
+
+Damit das Programm pr‰zise Werte anzeigt, muss f¸r jede Festplatte in 
+ihrem Kontextmen¸ die richtige Clustergrˆﬂe eingestellt werden. (Sie 
+erfahren die Clustergrˆﬂe z.B. von der Defragmentierung.) Per Default 
+ist eine Clustergrˆﬂe von 4k eingestellt, diese Einstellung ist unter 
+Windows XP f¸r die meisten Laufwerke richtig.
+
+Es gibt auch die Einstellung "Automatische Erkennung", aber die ist 
+nicht absolut zuverl‰ssing und hat auﬂerdem den Nachteil, dass sie nur 
+funktioniert, wenn die komplette Partition gescannt wird, also nicht in 
+Verbindung mit einem Startordner (siehe n‰chster Abschnitt). Wird das 
+Tool f¸r einen speziellen Ordner gestartet, und es ist automatische 
+Erkennung eingestellt, dann wird eine Clustergrˆﬂe von 4k angenommen.
+
+
+3. Startordner
+
+Um das Tool mit der Anzeige eines speziellen Ordners zu starten, ist
+dessen Pfad in der Kommandozeile zu ¸bergeben. Diese Funktion kann auch 
+benutzt werden, um den Scanner ins Windows-Kontext-Men¸ von Laufwerken 
+und Ordnern einzubinden, das z.B. der Windows-Explorer hat. Das kann 
+entweder von Hand ¸ber die "Ordneroptionen" geschehen oder mittels der 
+Datei "Add Scanner to Context Menu.reg", die im Paket enthalten ist. 
+F¸r letztere Variante sind folgende Schritte nˆtig: 
+1. Datei "Add Scanner to Context Menu.reg" ˆffnen
+2. Die beiden darin enthaltenen Pfade "...\Scanner.exe" auf den Pfad 
+   ‰ndern, in dem der Scanner bei Ihnen tats‰chlich liegt
+3. Datei speichern und schlieﬂen
+4. Datei durch Doppelklick der Registry hinzuf¸gen
+
+Zum Entfernen der Eintr‰ge aus dem Kontextmen¸ f¸gen sie die Datei "Delete Scanner from Context Menu.reg" der Registry hinzu. Diese m¸ssen sie nicht vorher anpassen.
+
+
+4. Optimierung durch paralleles Scannen
+
+Dieser Abschnitt ist f¸r Sie nur interessant, wenn Ihr System mehr als 
+eine physische Festplatte enth‰lt. Das Programm ist in der Lage, alle 
+Festplatten gleichzeitig zu scannen und dadurch ggf. den Scanvorgang zu 
+verk¸rzen. Jede Festplatte besitzt ein Kontextmen¸ (Klick mit der 
+rechten Maustaste auf den zugehˆrigen Knopf), in dem Sie die Nummer des 
+physischen Ger‰ts einstellen kˆnnen. Laufwerke, f¸r die Sie verschiedene 
+Werte einstellen, werden parallel gescannt. Achtung: Stellen Sie nicht 
+Partitionen auf der gleichen physischen Festplatte auf unterschiedliche 
+Werte ein. In diesem Falle w¸rde das Programm langsamer!
+
+
+5. Systemvoraussetzungen
+
+Windows 95/98/NT/ME/2000/XP/Vista
+mindestens 16 Bit Farbtiefe
+
+
+6. Installation/Deinstallation
+
+Wenn Sie das ZIP-Archiv entpackt haben, ist der Scanner schon 
+einsatzbereit. Ein eventuell gew¸nschter Eintrag ins Startmen¸ muﬂ von 
+Hand vorgenommen werden. Um den Scanner zu deinstallieren, lˆschen Sie 
+einfach alle "Scanner.*"-Dateien. Das Programm nimmt keine ƒnderungen am 
+Windows-Systemordner vor.
+
+
+7. Nutzungsbedingungen
+
+Das Programm ist Freeware. Die Verwendung unterliegt keiner zeitlichen
+Begrenzung und verlangt keine Registrierung. Jedem wird das Recht 
+gew‰hrt, das Programmpaket in beliebiger Form ohne mein explizites 
+Einverst‰ndnis zu verbreiten, solange der Copyright-Vermerk und die 
+Web-Links nicht entfernt werden.
+
+Copyright (C)2006 by Steffen Gerlach
+
+Die neueste Programmversion finden Sie auf meiner Freeware-Seite:
+http://www.steffengerlach.de/freeware/
+
+F¸r Beschwerden, Kommentare und Verbesserungsvorschl‰ge benutzen Sie 
+bitte dieses Formular: 
+http://www.steffengerlach.de/contact/
+
+
+8. Bekannte Fehler und Schw‰chen
+
+- Buttons gibt es nur f¸r die ersten Laufwerke, je nach gew‰hlter
+  Fenstergrˆﬂe.
+- Sie kˆnnen nicht in Ordner wechseln, die zu klein sind, um vom
+  ¸bergeordneten Ordner aus sichtbar zu sein.
+- Der Support f¸r Netzlaufwerke funktioniert nicht auf jedem System. Im
+  Moment kann ich diesen Bug auch nicht beseitigen, da mir die nˆtige
+  Ausr¸stung fehlt.
+- Das Programm wurde nicht getestet mit komprimierten oder
+  zugriffsgesch¸tzten Ordnern unter Windows NT/2000 und wird damit
+  wahrscheinlich auch nicht korrekt arbeiten.
+- Beginnt der Name des Papierkorb-Ordners nicht mit 'RECYCL', dann wird
+  dieser vom Programm nicht erkannt; d.h. er wird als normaler Ordner
+  angezeigt, nicht zum freien Speicher hinzugerechnet und nicht bei
+  Bedarf automatisch neu gescannt.
+- Die verwendete API-Funktion zum Leeren des Papierkorbs steht unter
+  Windows 95A und NT nicht zur Verf¸gung, der entsprechende Button
+  erscheint nicht.
+- Die angezeigten Werte f¸r benutzten Speicherplatz sind minimal
+  (¸blicherweise weit weniger als 1/1000) kleiner als sie tats‰chlich
+  sind. Da die Werte aber sowieso gerundet werden, sollte das nicht von
+  Belang sein.
+- Unformatierte Laufwerke und Laufwerke mit Dateisystemen, die f¸r 
+  Windows nicht lesbar sind, kˆnnen nicht gescannt werden, auch wenn 
+  ein Button daf¸r erscheint.
+
+
+9. FAQ
+
+Frage: Kann es sein, daﬂ sich das Programm bei der Grˆﬂe von Ordnern
+manchmal ganz gewaltig verrechnet? F¸r meinen Cookies-Ordner
+beispielsweise, der ein paar tausend sehr kleine Dateien enth‰lt, zeigt
+das Programm einen gigantischen Wert in der Grˆﬂenordnung von hunderten
+MB, obwohl die Dateien zusammen nicht mal ein MB groﬂ sind.
+
+Antwort: Der Scanner zeigt den belegten Speicherplatz an, nicht die
+Summe der Dateigrˆﬂen. Unter bestimmten Umst‰nden (sehr kleine Dateien
+bei sehr groﬂen Clustern) kˆnnen sich diese Werte stark unterscheiden,
+da jede noch so kleine Datei mindestens einen ganzen Cluster belegt.
+
+Frage: Beim Start f‰ngt das Programm sofort an, alle Festplatten zu 
+scannen. Das dauert bei mir ziemlich lange und ist eigentlich 
+Zeitverschwendung, da ich nur gezielt auf einzelne Laufwerke zugreifen 
+mˆchte. Was kann ich tun?
+
+Antwort: Lassen Sie sich durch den gestarteten Scanvorgang nicht davon
+abhalten, das zu tun, was Sie wollen. Das Scannen wird automatisch 
+abgebrochen und verworfen, wenn etwas Anderes gew‰hlt wird.
+
+Frage: Warum ist das Ver‰ndern der Fenstergrˆﬂe beim Scanner so 
+umst‰ndlich und nicht einfach per Maus am Rand mˆglich, wie unter 
+Windows ¸blich?
+
+Antwort: Zeichnen und Gl‰tten des Diagramms dauern zu lange f¸r ein
+schnelles, kontinuierliches Zoomen.
+
+Frage: Ich habe mehr als 13 Laufwerke und w¸rde gern alle ansprechen.
+
+Antwort: Vergrˆﬂern sie das Fenster mit dem "+"-Button.
+
+Frage: Eine/mehrere meiner Festplatten erscheinen zwar als 
+Festplattensymbol in der Laufwerksliste links, werden aber nicht mit in 
+das ‹bersichtsdiagramm aufgenommen. Ein Bug?
+
+Antwort: Wahrscheinlich haben Sie diese Laufwerke versehentlich selbst
+aus der ‹bersicht entfernt. Siehe Abschnitt 1.
+
+Frage: Mit welcher Sprache wurde dieses Programm entwickelt?
+
+Antwort: Delhpi 4.
+
+
+10. Versionsgeschichte
+
+2.8 (23.03.06)
+  - Absturz nach Neu-Scannen behoben
+
+2.7 (17.03.06)
+  - anf‰nglicher Pfad kann in Kommandozeile ¸bergeben werden
+  - Ordner, die nur andere Ordner oder Laufwerke verlinken, werden nicht gescannt
+  - bei Grˆﬂenangaben werden die Tausender nicht mehr abgetrennt, da leichte Verwechslung mit Komma
+
+2.6 (13.04.02)
+  - Option Verstecken/Einblenden
+
+2.5 (01.09.01)
+  - Fehler beim parallelen Scannen in Version 2.3 beseitigt
+  - Fenstergrˆﬂe w‰hlbar
+  - weniger strenge Erkennung des Papierkorbes
+  - Programm reagiert w‰hrend des Scannens
+
+2.3 (06.06.00)
+  - schwerer Fehler bei Dateien >=2GByte behoben
+
+2.2 (09.05.00)
+  - seltene Anzeigeprobleme unter High Color behoben
+  - Unterst¸tzung f¸r Sprachen mit anderem Zeichensatz
+
+2.1 (17.01.00)
+  - Kontextmen¸ f¸r jedes Objekt
+  - experimenteller Support f¸r Netzlaufwerke
+
+2.0 (25.07.99)
+  - einzelne Ordner darstellbar
+  - Laufwerk w‰hlbar, alle Laufwerkstypen werden unterst¸tzt
+  - automatische k/M/GByte Umschaltung
+  - keine Beschr‰nkung mehr f¸r die Gesamtzahl der Ordner
+  - optionales paralleles Scannen der Festplatten
+
+1.6 (05.07.99)
+  - schnelleres Antialiasing
+
+1.5 (30.05.99)
+  - mehrsprachig
+
+1.4 (04.05.99)
+  - schwerer Fehler bei Partitionen >=4GByte behoben
+
+1.3 (02.05.99)
+  - schwerer Fehler bei mehreren groﬂen Partitionen behoben
+  - Scanner kann Logfiles erzeugen
+
+1.2 (17.04.99)
+  - Button-Grafiken ge‰ndert
+  - Anti-Aliasing jetzt abschaltbar
+
+1.1 (14.04.99)
+  - schwerer Fehler bei 16384+ Dateien behoben
+
+1.0 (14.03.99)
